@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--js쿼리 파일 참조하기-->
+    <script src="js/jquery.js"></script>
+
+
+</head>
+<body>
+
+<h3>li태그에 동일한 이벤트를 등록하자 </h3>
+<ul id="test">
+    <li>태그1</li>
+    <li>태그2</li>
+    <li>태그3</li>
+</ul>
+
+<script>
+    //lst : JS이용 
+    //li태그를 전부가져온후 반복문으로 돌려줌
+    // var tag =document.querySelectorAll("#test li");
+    // for(var i=0 ; i < tag.length; i++) {
+
+    //     tag[i].onclick = function() {
+    //         alert(1);
+    //     }
+
+    // }
+
+    // //jquery 방법 1
+    // $("#test li").click(function() {
+    //     console.log($(this)) 
+    //     //jquery에 this 를 사용하는 방법
+    //     //$(this): 실행되는 대상 
+
+    //     console.log($(this).html()) //제이쿼리의 실행대상 선택방법
+        
+    // });
+
+    //2nd : JS 이용 
+    //부모에 이벤트 걸고 위임
+
+    // var test = document.getElementById("test");
+    // test.onclick = function() {
+
+    //     if(event.target.tagName != "LI") return;
+
+    //     console.log(1);
+
+    // }
+
+    //2.JS의 이벤트위임방식의 jquery 방식 으로 해보기 
+
+    //2nd jquery 방식
+
+    $("#test").on("click" , "li" , function() {
+        console.log($(this).html());
+
+    });
+</script>
+
+<div id="box">
+    <!--비워둠-->
+</div>
+
+<script>
+    $(document).ready(function() {
+
+        //on방식이 아닌 일반 이벤트 등록방법
+        // $("#box a").click(function() {
+        //     event.preventDefault();
+        //     alert("실행됨");
+        // })
+
+        //이벤트위임방식
+
+        $("#box").on("click" , "a", function() {
+            event.preventDefault();
+            alert("실행됨");
+            
+        })
+        var str ="";
+        str += '<a href="#">태그1</a>';
+        str += '<a href="#">태그2</a>';
+        str += '<a href="#">태그3</a>';
+        
+        
+        $("#box").html(str);
+    });
+</script>
+    
+</body>
+</html>

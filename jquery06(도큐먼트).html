@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!--js쿼리 파일 참조하기-->
+     <script src="js/jquery.js"></script>
+
+
+</head>
+<body>
+    <h3>window.onload vs document.ready</h3>
+
+    <script>
+
+        //JS -> window.onload 코드
+    // window.onload = function() {
+    //     document.getElementById("btn").onclick = function() {
+    //         alert("실행됨");
+    //     }
+    // } 딱 하나만 사용가능 window.onload는 한번만 사용가능 합니다 
+
+    //위를 보완하는 document.ready 엄청중요~~
+
+    $(document).ready(function() {
+        document.getElementById("btn").onclick = function() {
+            alert("실행됨~")
+        }
+    });
+
+    //두개도 사용가능 !! 세개도 네개도~
+    $(document).ready(function() {
+        console.log(1);
+    })
+
+    
+    </script>
+
+    <button type="button" id="btn">이벤트버튼</button>
+
+
+
+
+</body>
+</html>

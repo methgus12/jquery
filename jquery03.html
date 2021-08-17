@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+           <!--js쿼리 파일 참조하기-->
+           <script src="js/jquery.js"></script>
+
+</head>
+<body>
+
+    <h3>스타일 변경 CSS</h3>
+
+    <ul class="test">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+    </ul>
+
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+    <div class="box">box</div>
+
+    <script>
+
+        //li에 모든 백그라운드 변경 - JS
+        // document.querySelectorAll("li").forEach(function(value,index,node){
+
+        //     console.log(value);
+        //     console.log(index);
+        //     console.log(node);
+
+        //     value.style.backgroundColor ="red";
+
+        // })
+
+        //제이쿼리는 다중 , 단일 선택에 상관없이 한번에 모든 선택자에 적용이됩니다.
+        //li의 모든 백그라운드 색상 변경 Jquery 
+        $("li").css("backgroundColor" , "green");
+
+        //값 확인
+        var result =$("li").css("backgroundColor");
+        console.log(result); //rgb색상으로 나타남 
+
+        //css속성은 {}형식으로 한번에 변경 
+        $(".box").css({
+            backgroundColor : "skyblue",
+            display : "inline-block",
+            width : "100px",
+            height : "100px",
+            border : "1px solid #777"
+        })
+
+    </script>
+
+    
+
+</body>
+</html>

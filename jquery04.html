@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <!--js쿼리 파일 참조하기-->
+     <script src="js/jquery.js"></script>
+
+</head>
+<body>
+
+    <h3>innerHTML 을 제이쿼리 html()</h3>
+
+    <div class="test"></div>
+
+    <div class="test-html"></div>
+
+    <script>
+        //test 를 a 태그로 바꿈 JS
+        // document.querySelector(".test").innerHTML = "<a href='#'>kkk</a>";
+
+        //jquery 
+        $(".test").html("<a href='#'>kkk</a>"); //제이쿼리 innerHTML
+        $(".test").html(""); // 값 없애기 -> 공백으로 표현해주면 가능 
+
+        //일반텍스트html
+        $(".test").html("홍길동"); 
+
+        //값얻기
+        var a = $(".test").html(); //html()를 비워둠 -> 값 얻기
+        console.log(a); //홍길동 출력됨 
+
+        //순수 문자열의 형태로 삽입하기 text()
+        $(".test-html").text("<a href='#'>kkk</a>");
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

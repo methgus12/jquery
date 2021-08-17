@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!--js쿼리 파일 참조하기-->
+      <script src="js/jquery.js"></script>
+</head>
+<body>
+
+    <script>
+        $(document).ready(function() { //jquery의 window.onload역할
+
+            //이벤트에 on이 빠짐 
+            $("#btn").click(function() {
+
+                alert("클릭됨");
+            });
+
+            //이벤트 등록 2
+            $("#tag").keyup(function() {
+                console.log("키눌림");
+
+            });
+
+            //이벤트 등록 3
+            $("#sel").change(function() {
+
+                alert("클릭!");
+            });
+
+        });
+
+
+
+    </script>
+
+    <button type="button" id="btn">이벤트등록</button>
+
+    <input type="text" id="tag">
+
+    <select id="sel">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+
+    </select>
+
+
+    
+</body>
+</html>
